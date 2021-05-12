@@ -1,0 +1,12 @@
+<div >
+    <h3>{{blog.title}}</h3>
+    <li class="postItems" *ngFor="let post of blog.posts">
+        <div class="postTitle">
+        {{post.title}}
+    </div>
+    <div class="postContent">
+        {{post.content}}
+    </div>
+    </li>
+  </div>
+  
