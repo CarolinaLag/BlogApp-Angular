@@ -1,6 +1,6 @@
-<!-- <app-add-blog (addBlog)="addBlog($event)"></app-add-blog> -->
+ <app-add-blog (addBlog)="addBlog($event)"></app-add-blog> 
 
-<input type="text" #blogInput  />
-<button (click)="addBlog(blogInput.value)">Add blog</button>
+<!-- <input type="text" #blogInput  />
+<button (click)="addBlog(blogInput.value)">Add blog</button> -->
 
 <app-blog *ngFor="let blog of blogs" [blog]="blog" ></app-blog>
