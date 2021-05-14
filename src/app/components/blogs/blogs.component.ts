@@ -13,8 +13,22 @@ export class BlogsComponent implements OnInit {
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    this.blogService.getBlogs().subscribe(blogs => {
-      this.blogs = blogs;
+    this.blogService.getBlogs().subscribe(data => {
+      console.log(data);
+      this.blogs = data;
     });
   }
+  
+  addBlog(blog:Blog) {
+    this.blogService.addBlog(blog).subscribe(blog => {
+      this.blogs.push(blog);
+    })
+  }
+
+  // addBlog(blog) {
+  //   this.blogService.addBlog(blog).subscribe(data => {
+  //     this.blogs.push({title: blog , id: 1, created: '', userId: 55, posts:[]});
+  //     console.log(data);
+  //   })
+  // }
 }
