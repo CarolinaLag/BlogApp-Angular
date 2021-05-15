@@ -4,7 +4,7 @@ export class Blog {
     id: number;
     title: string;
     created: string;
-    userId: number;
+    userId: number = 55;
     posts: Post[];
   
     constructor(id: number,title: string, created: string, userId: number, posts: Post[]) {

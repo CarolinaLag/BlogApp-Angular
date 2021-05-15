@@ -1,6 +1,7 @@
 <div >
     <h3>{{blog.title}}</h3>
-    <li class="postItems" *ngFor="let post of blog.posts">
+    <h3>{{blog.created}}</h3>
+    <li class="postItems" *ngFor="let post of blog.posts; let i = index">
         <div class="postTitle">
         {{post.title}}
     </div>

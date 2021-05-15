@@ -22,13 +22,8 @@ export class BlogsComponent implements OnInit {
   addBlog(blog:Blog) {
     this.blogService.addBlog(blog).subscribe(blog => {
       this.blogs.push(blog);
+      console.log(blog)
     })
   }
 
-  // addBlog(blog) {
-  //   this.blogService.addBlog(blog).subscribe(data => {
-  //     this.blogs.push({title: blog , id: 1, created: '', userId: 55, posts:[]});
-  //     console.log(data);
-  //   })
-  // }
 }

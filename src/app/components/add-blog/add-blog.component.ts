@@ -11,6 +11,8 @@ export class AddBlogComponent implements OnInit {
   @Output() addBlog: EventEmitter<any> = new EventEmitter();
 
   title: string;
+  created: string;
+  userId: number;
 
   constructor() { }
 
@@ -20,6 +22,8 @@ export class AddBlogComponent implements OnInit {
   onSubmit() {
     const blog = {
       title: this.title,
+      created: this.created,
+      userId: this.userId = 55
     }
 
     this.addBlog.emit(blog);
