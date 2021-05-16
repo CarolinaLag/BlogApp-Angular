@@ -13,6 +13,7 @@ export class AddBlogComponent implements OnInit {
   title: string;
   created: string;
   userId: number;
+  posts: Post[];
 
   constructor() { }
 
@@ -23,7 +24,8 @@ export class AddBlogComponent implements OnInit {
     const blog = {
       title: this.title,
       created: this.created,
-      userId: this.userId = 55
+      userId: this.userId = 55,
+      posts: this.posts
     }
 
     this.addBlog.emit(blog);

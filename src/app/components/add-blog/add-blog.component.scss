@@ -1,5 +1,22 @@
-.form {
+.blogForm {
     display: flex;
     flex-direction: column;
-    width: 30%;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    font-weight: bold;
+    .blogInput {
+        padding: 5px;
+        border-radius: 25px;
+        border: solid black 1px;
+        margin: 5px;
+        text-align: center;
+    }
+    .blogButton {
+        padding: 5px;
+        border-radius: 25px;
+        border: solid black 1px;
+        margin: 5px;
+        cursor: pointer;
+    }
 }

@@ -1,0 +1,16 @@
+nav {
+    .menuList {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        .menuListItem {
+            list-style: none;
+            padding: 10px;
+            cursor: pointer;
+            &:hover {
+                background-color: rgb(65, 153, 224);
+                border-radius: 5px;
+            }
+        }
+    }
+}

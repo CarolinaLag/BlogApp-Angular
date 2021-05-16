@@ -1,0 +1,9 @@
+<h2>Add new post</h2>
+<form class="postForm" (ngSubmit)="onSubmitPost()">
+    <label for="title" class="postLabel">Title: </label>
+    <input type="text" name="title" class="postInput" [(ngModel)]="title"
+    >
+    <label for="content">Content:</label>
+    <textarea name="content" [(ngModel)]="content"></textarea>
+ <button type="submit" class="blogButton">Add post</button>
+</form>

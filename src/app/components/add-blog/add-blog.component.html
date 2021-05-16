@@ -1,6 +1,6 @@
-<form class="form" (ngSubmit)="onSubmit()">
-    <label>Add blog: </label>
-    <input type="text" name="title" [(ngModel)]="title"
+<form class="blogForm" (ngSubmit)="onSubmit()">
+    <label class="blogLabel">Add blog: </label>
+    <input type="text" name="title" class="blogInput" [(ngModel)]="title"
     placeholder="Title">
- <input type="submit" value="Submit" class="inputButton">
+ <input type="submit" value="Submit" class="blogButton">
 </form>

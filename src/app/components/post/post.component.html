@@ -1,0 +1,10 @@
+<div>
+  <li class="postItems" *ngFor="let post of blog.posts; let i = index">
+    <div class="postTitle">
+      {{ post.title }}
+    </div>
+    <div class="postContent">
+      {{ post.content }}
+    </div>
+  </li>
+</div>
