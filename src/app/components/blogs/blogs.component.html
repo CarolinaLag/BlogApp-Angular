@@ -2,6 +2,7 @@
 
 
 <div *ngFor="let blog of blogs" [blog]="blog" routerLink="/blog/{{blog.id}}" >
+    
     <div class="blogContainer" >
         <h2>Blog Title:</h2>
         <h3 class="blogTitle"> {{blog.title}}</h3>
