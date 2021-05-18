@@ -1,14 +1,16 @@
-<div class="blogContainer" >
+<div class="blogContainer">
+<div class="blogSection" >
     <h2 >Blog Title:</h2>
     <h3 class="blogTitle" *ngIf="blog?.title"> {{blog.title}}</h3>
     <h2>Date:</h2>
     <p class="blogDate" *ngIf="blog?.created">{{blog.created}}</p>
     
   </div>
+</div>
 
   <app-add-post (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
 
-  <app-post *ngFor="let post of blog?.posts" [post]="post" ></app-post>
+  <app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" ></app-post>
 
  
   
