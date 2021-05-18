@@ -1,5 +1,23 @@
 .postForm {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    font-weight: bold;
+    align-items: center;
+    .postInput {
+        padding: 5px;
+        border-radius: 25px;
+        border: solid black 1px;
+        margin: 5px;
+    }
+    .postButton {
+        padding: 5px;
+        border-radius: 25px;
+        border: solid black 1px;
+        margin: 5px;
+        cursor: pointer;
+        width: 50%;
+    }
 }

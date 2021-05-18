@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from 'src/app/models/Blog';
 
@@ -10,11 +10,13 @@ import { Blog } from 'src/app/models/Blog';
 export class BlogsComponent implements OnInit {
   blogs: Blog[] = [];
 
+  @Input() blog: Blog;
+
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(data => {
-      console.log(data);
+      // console.log(data);
       this.blogs = data;
     });
   }
@@ -22,7 +24,7 @@ export class BlogsComponent implements OnInit {
   addBlog(blog:Blog) {
     this.blogService.addBlog(blog).subscribe(blog => {
       this.blogs.push(blog);
-      console.log(blog)
+      // console.log(blog)
     })
   }
 

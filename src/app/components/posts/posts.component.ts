@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
-import { BlogService } from 'src/app/services/blog.service';
+import { PostService } from 'src/app/services/post.service';
 
 @Component({
   selector: 'app-posts',
@@ -10,20 +11,28 @@ import { BlogService } from 'src/app/services/blog.service';
 export class PostsComponent implements OnInit {
   posts: Post[] = [];
 
-  constructor(private blogService: BlogService) { }
+  @Input() blog: Blog;
+
+  constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.blogService.getPosts().subscribe(data => {
+    this.postService.getPosts().subscribe(data => {
       console.log(data);
       this.posts = data;
     });
   }
 
-  addPost(post:Post) {
-    this.blogService.addPost(post).subscribe(post => {
-      this.posts.push(post);
-      console.log(post)
+  getPosts(): void {
+    const blogId = this.blog.id;
+    this.postService.getPosts().subscribe((data) => {
+      this.blog.posts = data.filter((post) => post.id == blogId);
     })
   }
 
+  addPost(post:Post) {
+    this.postService.addPost(post).subscribe(post => {
+      this.blog.posts.push(post);
+      console.log(post)
+    })
+  }
 }

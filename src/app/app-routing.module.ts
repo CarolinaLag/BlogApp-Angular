@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddBlogComponent } from './components/add-blog/add-blog.component';
-import { HomeComponent } from './components/home/home.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 const routes: Routes = [
   {
-    path: "",
-    component: HomeComponent
+    path: "", redirectTo:'/blogs', pathMatch:'full',
   },
   {
-    path: "add-blog",
-    component: AddBlogComponent
+    path: "blogs",
+    component: BlogsComponent
+  },
+  {
+    path: "blog/:id",
+    component: BlogComponent
   }
 ];
 

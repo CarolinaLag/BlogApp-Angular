@@ -1,6 +1,9 @@
 import { Comment } from "./Comment";
 
+let d = new Date();
+
 export class Post {
+    blogId: number;
     id: number;
     title: string;
     content: string;
@@ -8,12 +11,13 @@ export class Post {
     modified: string;
     comments: Comment[];
   
-    constructor(id: number, title: string, content: string, created: string, modified: string, comments: Comment[]) {
-      this.id = id;
+    constructor(blogId: number, title: string, content: string) {
+      this.blogId = blogId;
+      this.id;
       this.title = title;
       this.content = content;
-      this.created = created;
-      this.modified = modified;
-      this.comments = comments;
+      this.created = d.toISOString();
+      this.modified = d.toISOString();
+      this.comments = [];
     }
   }

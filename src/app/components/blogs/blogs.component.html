@@ -1,3 +1,5 @@
  <app-add-blog (addBlog)="addBlog($event)"></app-add-blog> 
 
-<app-blog *ngFor="let blog of blogs" [blog]="blog" ></app-blog>
+<a >
+<app-blog *ngFor="let blog of blogs" [blog]="blog" routerLink="/blog/{{blog.id}}" ></app-blog>
+</a>

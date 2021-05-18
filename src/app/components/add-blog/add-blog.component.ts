@@ -10,10 +10,9 @@ import { Post } from 'src/app/models/Post';
 export class AddBlogComponent implements OnInit {
   @Output() addBlog: EventEmitter<any> = new EventEmitter();
 
+  userId: number;
   title: string;
   created: string;
-  userId: number;
-  posts: Post[];
 
   constructor() { }
 
@@ -21,12 +20,10 @@ export class AddBlogComponent implements OnInit {
   }
 
   onSubmit() {
-    const blog = {
-      title: this.title,
-      created: this.created,
-      userId: this.userId = 55,
-      posts: this.posts
-    }
+    this.title = this.title;
+    this.created = this.created;
+
+    let blog = new Blog(this.userId, this.title, this.created);
 
     this.addBlog.emit(blog);
   }
