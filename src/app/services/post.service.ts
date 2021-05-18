@@ -21,6 +21,6 @@ export class PostService {
   }
 
   addPost(post: Post):Observable<Post> {
-    return this.http.post<Post>('https://mi-blogs.azurewebsites.net/api/posts', post, httpOptions);
+    return this.http.post<Post>('https://mi-blogs.azurewebsites.net/api/posts', post);
   }
 }

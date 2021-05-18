@@ -3,5 +3,12 @@
     <h3 class="blogTitle"> {{blog.title}}</h3>
     <h2>Date:</h2>
     <p class="blogDate">{{blog.created}}</p>
+    
   </div>
+
+  <app-add-post (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+
+  <app-post *ngFor="let post of blog?.posts" [post]="post" ></app-post>
+
+ 
   

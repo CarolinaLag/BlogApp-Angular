@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { Blog } from 'src/app/models/Blog';
+
 import { Post } from 'src/app/models/Post';
 
 @Component({
@@ -9,7 +9,6 @@ import { Post } from 'src/app/models/Post';
 })
 export class AddPostComponent implements OnInit {
   @Output() addPost: EventEmitter<any> = new EventEmitter();
-
   @Input() blog:number;
 
   blogId: number;
@@ -22,9 +21,10 @@ export class AddPostComponent implements OnInit {
   }
 
   onSubmitPost() {
+    this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;
-    this.blogId = this.blog;
+    console.log(this.blogId)
 
     let post = new Post(this.blogId, this.title, this.content);
     

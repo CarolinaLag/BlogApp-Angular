@@ -11,7 +11,7 @@ export class Blog {
 
   constructor(userId: number, title: string, created: string) {
     this.userId = 55;
-    this.id;
+    this.id = 0;
     this.title = title;
     this.created = d.toISOString();
     this.posts = [];

@@ -13,7 +13,7 @@ export class Post {
   
     constructor(blogId: number, title: string, content: string) {
       this.blogId = blogId;
-      this.id;
+      this.id = 0;
       this.title = title;
       this.content = content;
       this.created = d.toISOString();

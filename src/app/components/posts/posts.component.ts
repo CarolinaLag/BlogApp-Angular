@@ -9,17 +9,17 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
-  posts: Post[] = [];
+
 
   @Input() blog: Blog;
 
   constructor(private postService: PostService) { }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe(data => {
-      console.log(data);
-      this.posts = data;
-    });
+    // this.postService.getPosts().subscribe(data => {
+    //   console.log(data);
+    //   this.posts = data;
+    // });
   }
 
   getPosts(): void {
@@ -29,10 +29,5 @@ export class PostsComponent implements OnInit {
     })
   }
 
-  addPost(post:Post) {
-    this.postService.addPost(post).subscribe(post => {
-      this.blog.posts.push(post);
-      console.log(post)
-    })
-  }
+ 
 }
