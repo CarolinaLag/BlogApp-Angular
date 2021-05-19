@@ -1,8 +1,12 @@
 <header>
   <nav>
     <ul class="menuList">
-      <li class="menuListItem" routerLink="">Home</li>
-      <li class="menuListItem" routerLink="add-blog">Add Blog</li>
+      <li class="menuListItem"> 
+       <a routerLink="blogs" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">My Blogs</a>
+      </li>
+      <!-- <li class="menuListItem"> 
+        <a routerLink="blog/{{blog.id}}" routerLinkActive="active">See posts/Create post</a>
+       </li> -->
     </ul>
   </nav>
 </header>

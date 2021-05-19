@@ -16,7 +16,7 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit() {
     this.blogService.getBlogs().subscribe(data => {
-      // console.log(data);
+      console.log(data);
       this.blogs = data;
     });
   }
@@ -24,7 +24,7 @@ export class BlogsComponent implements OnInit {
   addBlog(blog:Blog) {
     this.blogService.addBlog(blog).subscribe(blog => {
       this.blogs.push(blog);
-      // console.log(blog)
+      console.log(blog)
     })
   }
 

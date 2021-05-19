@@ -8,7 +8,7 @@
   </div>
 </div>
 
-  <app-add-post (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+  <app-add-post *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
 
   <app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" ></app-post>
 
