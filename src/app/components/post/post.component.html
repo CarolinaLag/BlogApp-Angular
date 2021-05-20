@@ -1,8 +1,24 @@
-<div class="postContainer">
+<!-- Visar alla inlägg innuti blogen -->
+<div class="postContainer" *ngIf="blog" routerLink="/blog/{{blog.id}}/post/{{post.id}}">
   <div class="postSection">
     <h2>Post Title:</h2>
-    <h3 class="postTitle">{{ post.title }}</h3>
+    <h3 class="postTitle" *ngIf="post?.title">{{ post.title }}</h3>
     <h2>Post Content:</h2>
-    <p class="postContent">{{ post.content }}</p>
+    <p class="postContent" *ngIf="post?.content">{{ post.content }}</p>
   </div>
 </div>
+
+ <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment>
+
+<!-- <app-comment class="appComment" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>  -->
+
+
+<!-- <div class="postContainer" *ngFor="let post of blog?.posts" [post]="post" routerLink="/post/{{post.id}}" >
+
+  <div class="postSection">
+  <h2>Post Title:</h2>
+  <h3 class="postTitle" *ngIf="post?.title">{{ post.title }}</h3>
+  <h2>Post Content:</h2>
+  <p class="postContent" *ngIf="post?.content">{{ post.content }}</p>
+</div> 
+</div> -->

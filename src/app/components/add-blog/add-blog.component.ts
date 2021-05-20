@@ -8,7 +8,7 @@ import { Post } from 'src/app/models/Post';
   styleUrls: ['./add-blog.component.scss']
 })
 export class AddBlogComponent implements OnInit {
-  @Output() addBlog: EventEmitter<any> = new EventEmitter();
+  @Output() addBlog: EventEmitter<Blog> = new EventEmitter();
 
   userId: number;
   title: string;

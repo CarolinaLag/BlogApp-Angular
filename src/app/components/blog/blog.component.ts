@@ -24,9 +24,6 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
     this.getBlog();
-  // this.blogService.getBlogs().subscribe(blogs => {
-  //   this.blogs = blogs;
-  // });
   }
 
   getBlog(): void {

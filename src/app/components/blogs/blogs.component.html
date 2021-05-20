@@ -1,6 +1,6 @@
  <app-add-blog (addBlog)="addBlog($event)"></app-add-blog> 
 
-
+<!-- Visar alla mina bloggar på startsidan -->
 <div class="blogContainer" *ngFor="let blog of blogs" [blog]="blog" routerLink="/blog/{{blog.id}}" >
 
     <div class="blogSection" >

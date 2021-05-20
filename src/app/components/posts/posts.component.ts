@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Blog } from 'src/app/models/Blog';
+import { Post } from 'src/app/models/Post';
 import { PostService } from 'src/app/services/post.service';
 
 @Component({
@@ -10,6 +11,9 @@ import { PostService } from 'src/app/services/post.service';
 export class PostsComponent implements OnInit {
 
   @Input() blog: Blog;
+
+  @Input() post: Post;
+  posts: Post[] = [];
 
   constructor(private postService: PostService) { }
 

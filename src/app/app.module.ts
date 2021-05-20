@@ -18,6 +18,7 @@ import { CommentsComponent } from './components/comments/comments.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     CommentsComponent,
     CommentComponent,
     AddCommentComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,

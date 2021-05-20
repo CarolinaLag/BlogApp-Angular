@@ -15,6 +15,12 @@ export class PostService {
     return this.http.get<Post[]>('https://mi-blogs.azurewebsites.net/api/posts');
   }
 
+  getPost(idPost: number): Observable<Post> {
+    return this.http.get<Post> (
+    'https://mi-blogs.azurewebsites.net/api/posts/' + idPost
+    );
+  }
+
   addPost(post: Post):Observable<Post> {
     return this.http.post<Post>('https://mi-blogs.azurewebsites.net/api/posts', post);
   }
