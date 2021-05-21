@@ -8,9 +8,11 @@
   </div>
 </div>
 
-  <app-add-post *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+<!-- Visar min add new post form -->
+<app-add-post *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
 
-  <app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" [blog]="blog" ></app-post>
+<!-- Skickar ut det jag matar in i min post form -->
+<app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" [blog]="blog" ></app-post>
 
  
   
