@@ -39,10 +39,10 @@ export class PostComponent implements OnInit {
     })
   }
 
-  addComment(c:Comment) {
-    this.commentService.addComment(c).subscribe(comment => {
-      this.post.comments.push(comment);
-      console.log(comment)
-    })
-  }
+  // addComment(c:Comment) {
+  //   this.commentService.addComment(c).subscribe(comment => {
+  //     this.post.comments.push(comment);
+  //     console.log(comment)
+  //   })
+  // }
 }

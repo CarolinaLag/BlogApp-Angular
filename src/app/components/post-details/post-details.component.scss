@@ -1,0 +1,22 @@
+.postContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+.postSection {
+    background-color: rgb(186, 196, 204);
+    width: 70%;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+      .postSection {
+        width: 40%;
+      }
+    }

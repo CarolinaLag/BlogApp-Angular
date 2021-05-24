@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from 'src/app/models/Blog';
 
@@ -22,10 +22,28 @@ export class BlogsComponent implements OnInit {
   }
   
   addBlog(blog:Blog) {
+    if(blog.title == '') {
+    } else {
     this.blogService.addBlog(blog).subscribe(blog => {
       this.blogs.push(blog);
       console.log(blog)
-    })
+    });
+    blog.title = "";
+   }
   }
 
+  deleteBlog(blogId:number) {
+
+   this.blogService.deleteBlog(blogId).subscribe(() => {
+     this.blogService.getBlogs();
+   });
+   console.log(blogId)
+   }
+
+
+  // deleteBlog(blogId:Blog) {
+  //   this.blogService.deleteBlog(blogId).subscribe(data => {
+  //     console.log(data);
+  //   })
+  // } 
 }

@@ -5,8 +5,10 @@
 
     <div class="blogSection" >
         <h2>Blog Title:</h2>
-        <h3 class="blogTitle"> {{blog.title}}</h3>
+        <h3 class="blogTitle" *ngIf="blog.title"> {{blog.title}}</h3>
         <h2>Date:</h2>
-        <p class="blogDate">{{blog.created}}</p>
+        <p class="blogDate" *ngIf="blog.created">{{blog.created}}</p>
       </div>
 </div>
+<!-- <button (click)="onDelete(blog)" class="deleteBtn">Delete</button> -->
+

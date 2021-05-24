@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
 import { BlogService } from 'src/app/services/blog.service';
@@ -15,11 +15,14 @@ export class BlogComponent implements OnInit {
   @Input() blog: Blog;
   blogs: Blog[] = [];
 
+  //  @Output() deleteBlog: EventEmitter<number> = new EventEmitter();
+
   id: number; 
 
   constructor(private blogService: BlogService,
               private postService: PostService,
-              private route: ActivatedRoute
+              private route: ActivatedRoute,
+              private router: Router
               ) { }
 
   ngOnInit() {
@@ -38,6 +41,14 @@ export class BlogComponent implements OnInit {
     this.postService.addPost(p).subscribe(post => {
       this.blog.posts.push(post);
       console.log(post)
+    })
+  }
+
+  onDelete(blogId:number) {
+    this.blogService.deleteBlog(blogId).subscribe(() => {
+      this.blogService.getBlogs();
+      console.log(blogId)
+      this.router.navigate(['/blogs'])
     })
   }
 }

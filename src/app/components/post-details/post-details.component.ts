@@ -5,6 +5,7 @@ import { Comment } from 'src/app/models/Comment';
 import { CommentService } from 'src/app/services/comment.service';
 import { PostService } from 'src/app/services/post.service';
 import { Observable } from 'rxjs';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-post-details',
@@ -18,40 +19,35 @@ export class PostDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private postService: PostService,
-    private commentService: CommentService ) { }
+    private commentService: CommentService ,
+    private location: Location) { }
 
-    // Anrop för att hämta min unika post för att få kommentarerna också sedan innuti posten
   ngOnInit() {
-    this.postService.getPosts().subscribe(posts => {
-      this.posts = posts;
-      console.log(posts)
-    });
-
+    // this.postService.getPosts().subscribe(posts => {
+    //   this.posts = posts;
+    //   console.log(posts)
+    // });
+    this.getPost();
   }
 
-  // getPost(): void {
-  //   const id = Number(this.route.snapshot.paramMap.get('id'));
-  //   this.postService.getPost(id).subscribe((post) => {
-  //     this.post = post;
-  //     console.log(post);
-  //   })
-  // }
+  getPost(): void {
+    const id = Number(this.route.snapshot.paramMap.get('idPost'));
+    this.postService.getPost(id).subscribe((post) => {
+      this.post = post;
+      console.log(post);
+    })
+  }
 
-  // addComment(c:Comment) {
-  //   this.commentService.addComment(c).subscribe(comment => {
-  //     this.post.comments.push(comment);
-  //     console.log(comment)
-  //   })
-  // }
+  addComment(c:Comment) {
+    this.commentService.addComment(c).subscribe(comment => {
+      this.post.comments.push(comment);
+      console.log(comment)
+    })
+  }
 
+  goBack(): void {
+    this.location.back();
+  }
 
 }
 
-
-// getPost(): void {
-//   const id = Number(this.route.snapshot.paramMap.get('id'));
-//   this.postService.getPost(id).subscribe((post) => {
-//     this.post = post;
-//     console.log(post);
-//   })
-// }

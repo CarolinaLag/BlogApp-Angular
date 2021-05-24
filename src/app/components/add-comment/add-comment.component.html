@@ -1,8 +1,13 @@
 <div class="commentFormContainer">
-    <form class="commentForm" (ngSubmit)="onSubmitComment()">
-        <h2>Add new comment</h2>
-        <label for="content">Content:</label>
-        <textarea name="content" cols="30" rows="10" [(ngModel)]="content"></textarea>
-     <button type="submit" class="postButton">Add comment</button>
-    </form>
-    </div>
+  <form class="commentForm" (ngSubmit)="onSubmitComment()">
+    <h2>Add new comment</h2>
+    <label for="content">Content:</label>
+    <textarea
+      name="content"
+      cols="30"
+      rows="5"
+      [(ngModel)]="content"
+    ></textarea>
+    <button type="submit" class="commentButton">Add comment</button>
+  </form>
+</div>

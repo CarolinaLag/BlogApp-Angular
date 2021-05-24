@@ -1,9 +1,10 @@
 <div class="blogFormContainer">
-<form class="blogForm" (ngSubmit)="onSubmit()">
+<form class="blogForm" name="blogForm" (ngSubmit)="onSubmit()">
     <h2>Add new blog</h2>
     <label class="blogLabel">Title: </label>
-    <input type="text" name="title" class="blogInput" [(ngModel)]="title"
+    <input type="text" name="title" class="blogInput" id="title" ng-model="title" [(ngModel)]="title" required maxlength="30" minlength="2"
     >
+    <span class="titleRequired" *ngIf="!title">The title is required.</span>
  <input type="submit" value="Add Blog" class="blogButton">
 </form>
 </div>

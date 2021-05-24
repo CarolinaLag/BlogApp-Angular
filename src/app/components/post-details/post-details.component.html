@@ -1,4 +1,5 @@
 <!-- Visas efter man har klickat på ett inlägg -->
+<button type="button" class="backBtn" (click)="goBack()">Go back</button>
 <div class="postContainer">
     <div class="postSection" >
         <h2 >Post Title:</h2>
@@ -6,9 +7,9 @@
         <h2>Post Content:</h2>
         <p class="postContent" *ngIf="post?.content">{{post.content}}</p>
       </div>
-    </div>
+    
     
       <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [post]="post.id"></app-add-comment>
     
       <app-comment class="appComment" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>
-    
+    </div>

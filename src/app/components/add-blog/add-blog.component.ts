@@ -24,7 +24,7 @@ export class AddBlogComponent implements OnInit {
     this.created = this.created;
 
     let blog = new Blog(this.userId, this.title, this.created);
-
+    
     this.addBlog.emit(blog);
   }
 
