@@ -9,14 +9,19 @@ import { CommentService } from 'src/app/services/comment.service';
 })
 export class CommentsComponent implements OnInit {
   @Input() post: Post;
+  comments: Comment[] = [];
 
   constructor(private commentService: CommentService) { }
 
   ngOnInit(): void {
+    // this.commentService.getComments().subscribe(data => {
+    //   console.log(data);
+    //   this.comments = data;
+    // });
   }
 
   getComments(): void {
-    const postId = this.post.id;
+    // const postId = this.post.id;
     this.commentService.getComments().subscribe((data) => {
       // this.post.comments = data.filter((comment) => comment.id == postId);
       console.log(data)

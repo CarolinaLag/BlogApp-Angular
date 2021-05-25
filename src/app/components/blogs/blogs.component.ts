@@ -40,10 +40,4 @@ export class BlogsComponent implements OnInit {
    console.log(blogId)
    }
 
-
-  // deleteBlog(blogId:Blog) {
-  //   this.blogService.deleteBlog(blogId).subscribe(data => {
-  //     console.log(data);
-  //   })
-  // } 
 }

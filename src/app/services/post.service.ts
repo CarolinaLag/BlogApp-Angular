@@ -24,4 +24,8 @@ export class PostService {
   addPost(post: Post):Observable<Post> {
     return this.http.post<Post>('https://mi-blogs.azurewebsites.net/api/posts', post);
   }
+
+  deletePost(postId:number):Observable<Post> {
+    return this.http.delete<Post>('https://mi-blogs.azurewebsites.net/api/posts/' + postId);
+  }
 }

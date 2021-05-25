@@ -1,12 +1,14 @@
 <!-- Visar alla inlägg innuti blogen -->
-<div class="postContainer" *ngIf="blog" routerLink="/blog/{{blog.id}}/post/{{post.id}}">
-  <div class="postSection">
+<div class="postContainer" >
+  <div class="postSection" *ngIf="blog" routerLink="/blog/{{blog.id}}/post/{{post.id}}">
     <h2>Post Title:</h2>
     <h3 class="postTitle" *ngIf="post?.title">{{ post.title }}</h3>
     <h2>Post Content:</h2>
     <p class="trim-info" *ngIf="post?.content" tooltip="{{ post.content }}"> {{ post.content }} </p>
   </div>
+  <button (click)="onDeletePost(post.id)" class="deleteBtn">Delete Post</button>
 </div>
+
 
  <!-- <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment> -->
 

@@ -1,11 +1,12 @@
 
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
 import { Comment } from 'src/app/models/Comment';
 import { Post } from 'src/app/models/Post';
 import { CommentService } from 'src/app/services/comment.service';
 import { PostService } from 'src/app/services/post.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-post',
@@ -23,7 +24,8 @@ export class PostComponent implements OnInit {
 
   constructor(private postService: PostService, 
     private commentService: CommentService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private location: Location) { }
 
   ngOnInit() {
     this.postService.getPosts().subscribe(posts => {
@@ -36,6 +38,14 @@ export class PostComponent implements OnInit {
     this.postService.getPost(id).subscribe((post) => {
       this.post = post;
       console.log(post);
+    })
+  }
+
+  onDeletePost(postId:number) {
+    this.postService.deletePost(postId).subscribe(() => {
+      this.postService.getPosts();
+      console.log(postId)
+      location.reload();
     })
   }
 

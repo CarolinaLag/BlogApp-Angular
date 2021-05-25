@@ -15,8 +15,6 @@ export class BlogComponent implements OnInit {
   @Input() blog: Blog;
   blogs: Blog[] = [];
 
-  //  @Output() deleteBlog: EventEmitter<number> = new EventEmitter();
-
   id: number; 
 
   constructor(private blogService: BlogService,
