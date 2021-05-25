@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Post } from 'src/app/models/Post';
 
@@ -20,7 +21,7 @@ export class AddPostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmitPost() {
+  onSubmitPost(f: NgForm) {
     this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;
@@ -29,5 +30,6 @@ export class AddPostComponent implements OnInit {
     let post = new Post(this.blogId, this.title, this.content);
     
     this.addPost.emit(post);
+    f.resetForm();
   }
 }

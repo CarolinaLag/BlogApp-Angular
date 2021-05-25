@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
 
@@ -19,13 +20,14 @@ export class AddBlogComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
+  onSubmit(f:NgForm) {
     this.title = this.title;
     this.created = this.created;
 
     let blog = new Blog(this.userId, this.title, this.created);
     
     this.addBlog.emit(blog);
+    f.resetForm();
   }
 
 }

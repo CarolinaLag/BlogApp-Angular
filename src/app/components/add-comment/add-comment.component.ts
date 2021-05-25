@@ -1,5 +1,6 @@
 
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Comment } from 'src/app/models/Comment';
 
 @Component({
@@ -19,13 +20,14 @@ export class AddCommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmitComment() {
+  onSubmitComment(f: NgForm) {
     // this.content = this.content;
     // this.post;
 
     let comment = new Comment(this.content, this.postId);
     
     this.addComment.emit(comment);
+    f.resetForm();
   }
 
 }

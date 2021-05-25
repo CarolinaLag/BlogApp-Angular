@@ -1,5 +1,5 @@
 <div class="blogFormContainer">
-<form class="blogForm" name="blogForm" (ngSubmit)="onSubmit()">
+<form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit(f)">
     <h2>Add new blog</h2>
     <label class="blogLabel">Title: </label>
     <input type="text" name="title" class="blogInput" id="title" ng-model="title" [(ngModel)]="title" required maxlength="30" minlength="2"
