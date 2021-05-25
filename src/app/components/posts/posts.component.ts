@@ -29,7 +29,6 @@ export class PostsComponent implements OnInit {
 
   
   deletePost(postId:number) {
-
     this.postService.deletePost(postId).subscribe(() => {
       this.postService.getPosts();
     });

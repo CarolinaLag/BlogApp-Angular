@@ -12,6 +12,8 @@ export class BlogsComponent implements OnInit {
 
   @Input() blog: Blog;
 
+  title: string ="";
+
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
@@ -22,18 +24,13 @@ export class BlogsComponent implements OnInit {
   }
   
   addBlog(blog:Blog) {
-    if(blog.title == '') {
-    } else {
     this.blogService.addBlog(blog).subscribe(blog => {
       this.blogs.push(blog);
       console.log(blog)
     });
-    blog.title = "";
-   }
   }
 
   deleteBlog(blogId:number) {
-
    this.blogService.deleteBlog(blogId).subscribe(() => {
      this.blogService.getBlogs();
    });

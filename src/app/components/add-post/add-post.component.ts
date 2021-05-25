@@ -13,8 +13,8 @@ export class AddPostComponent implements OnInit {
   @Input() blog:number;
 
   blogId: number;
-  title: string;
-  content: string;
+  title: string = "";
+  content: string = "";
 
   constructor() { }
 
@@ -22,6 +22,8 @@ export class AddPostComponent implements OnInit {
   }
 
   onSubmitPost(f: NgForm) {
+    if(this.title == '' || this.content == '') {
+    } else {
     this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;
@@ -31,5 +33,8 @@ export class AddPostComponent implements OnInit {
     
     this.addPost.emit(post);
     f.resetForm();
+    this.title = "";
+    this.content = "";
+   }
   }
 }

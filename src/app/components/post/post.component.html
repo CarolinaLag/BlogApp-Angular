@@ -6,8 +6,8 @@
     <h2>Post Content:</h2>
     <p class="trim-info" *ngIf="post?.content" tooltip="{{ post.content }}"> {{ post.content }} </p>
   </div>
-  <button (click)="onDeletePost(post.id)" class="deleteBtn">Delete Post</button>
 </div>
+<button (click)="onDeletePost(post.id)" class="deleteBtn">Delete Post</button>
 
 
  <!-- <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment> -->

@@ -12,7 +12,7 @@ export class AddBlogComponent implements OnInit {
   @Output() addBlog: EventEmitter<Blog> = new EventEmitter();
 
   userId: number;
-  title: string;
+  title: string = '';
   created: string;
 
   constructor() { }
@@ -21,6 +21,8 @@ export class AddBlogComponent implements OnInit {
   }
 
   onSubmit(f:NgForm) {
+    if(this.title == '') {
+    } else {
     this.title = this.title;
     this.created = this.created;
 
@@ -28,6 +30,7 @@ export class AddBlogComponent implements OnInit {
     
     this.addBlog.emit(blog);
     f.resetForm();
+    this.title = "";
+   }
   }
-
 }
