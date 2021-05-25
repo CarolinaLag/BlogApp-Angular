@@ -9,7 +9,7 @@
       </div>
     
     
-      <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [post]="post.id"></app-add-comment>
+      <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment>
     
       <app-comment class="appComment" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>
     </div>

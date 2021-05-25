@@ -11,7 +11,7 @@ import { PostsComponent } from './components/posts/posts.component';
 const routes: Routes = [
   {
     path: "blog/:id",
-    component: BlogComponent
+    component: BlogComponent, data: { animation: 'BlogPage'}
   },
   {
     path: "blog/:id/post/:idPost",

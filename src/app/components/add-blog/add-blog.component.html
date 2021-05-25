@@ -2,8 +2,7 @@
 <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit(f)">
     <h2>Add new blog</h2>
     <label class="blogLabel">Title: </label>
-    <input type="text" name="title" class="blogInput" id="title" ng-model="title" [(ngModel)]="title" required maxlength="30" minlength="2"
-    >
+    <input type="text" name="title" class="blogInput" id="title" ng-model="title" [(ngModel)]="title" ng-maxlength="30" ng-minlength="2" required>
     <span class="titleRequired" *ngIf="!title">The title is required.</span>
  <input type="submit" value="Add Blog" class="blogButton">
 </form>
