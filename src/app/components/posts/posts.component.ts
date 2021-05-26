@@ -34,4 +34,12 @@ export class PostsComponent implements OnInit {
     });
     console.log(postId)
     }
+
+    updatePost(postId: number, post: Post) {
+
+      this.postService.updatePost(postId, post).subscribe(() => {
+        this.postService.getPosts();
+      });
+      console.log(postId);
+    }
 }

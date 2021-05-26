@@ -25,6 +25,7 @@ export class PostComponent implements OnInit {
   constructor(private postService: PostService, 
     private commentService: CommentService,
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location) { }
 
   ngOnInit() {
@@ -41,13 +42,13 @@ export class PostComponent implements OnInit {
     })
   }
 
-  onDeletePost(postId:number) {
-    this.postService.deletePost(postId).subscribe(() => {
-      this.postService.getPosts();
-      console.log(postId)
-      location.reload();
-    })
-  }
+  // onDeletePost(postId:number) {
+  //   this.postService.deletePost(postId).subscribe(() => {
+  //     this.postService.getPosts();
+  //     console.log(postId)
+  //     location.reload();
+  //   })
+  // }
 
   // addComment(c:Comment) {
   //   this.commentService.addComment(c).subscribe(comment => {

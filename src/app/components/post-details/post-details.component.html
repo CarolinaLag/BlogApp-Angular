@@ -6,6 +6,8 @@
         <h3 class="postTitle" *ngIf="post?.title"> {{post.title}}</h3>
         <h2>Post Content:</h2>
         <p class="postContent" *ngIf="post?.content">{{post.content}}</p>
+        <button (click)="onDeletePost(post.id)" class="deleteBtn">Delete Post</button>
+        <button (click)="onEditPost(post.id)" class="editBtn">Edit Post</button>
       </div>
     
     

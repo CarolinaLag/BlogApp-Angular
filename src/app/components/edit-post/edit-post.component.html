@@ -1,0 +1,11 @@
+<div class="postFormContainer">
+    <form class="postForm" #f="ngForm" (ngSubmit)="onSubmitPost()">
+        <h2>Update post</h2>
+        <label for="title" class="postLabel">Title: </label>
+        <input type="text" name="title" class="postInput" [(ngModel)]="title"
+        >
+        <label for="content">Content:</label>
+        <textarea name="content" cols="30" rows="10" [(ngModel)]="content"></textarea>
+     <button type="submit" class="postButton">Update post</button>
+    </form>
+    </div>

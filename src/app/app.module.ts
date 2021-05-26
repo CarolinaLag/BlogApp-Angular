@@ -20,6 +20,7 @@ import { AddCommentComponent } from './components/add-comment/add-comment.compon
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
     AddCommentComponent,
     NotfoundComponent,
     PostDetailsComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,

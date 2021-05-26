@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from 'src/app/models/Post';
 import { Comment } from 'src/app/models/Comment';
 import { CommentService } from 'src/app/services/comment.service';
@@ -20,7 +20,8 @@ export class PostDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private postService: PostService,
     private commentService: CommentService ,
-    private location: Location) { }
+    private location: Location,
+    private router: Router) { }
 
   ngOnInit() {
     // this.postService.getPosts().subscribe(posts => {
@@ -49,5 +50,20 @@ export class PostDetailsComponent implements OnInit {
     this.location.back();
   }
 
+  onDeletePost(postId:number) {
+    this.postService.deletePost(postId).subscribe(() => {
+      this.postService.getPosts();
+      console.log(postId)
+      this.location.back();
+    })
+  }
+
+  onEditPost(postId:number) {
+    this.postService.updatePost(postId, this.post).subscribe(() => {
+      this.postService.getPosts();
+      console.log(postId)
+      this.router.navigate(['/edit-post/' + this.post.id])
+    })
+  }
 }
 

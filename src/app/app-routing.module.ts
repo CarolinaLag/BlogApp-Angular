@@ -4,6 +4,7 @@ import { AddPostComponent } from './components/add-post/add-post.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
+import { EditPostComponent } from './components/edit-post/edit-post.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { PostComponent } from './components/post/post.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "edit-blog/:id",
     component: EditBlogComponent, data: { animation: 'EditBlogPage'}
+  },
+  {
+    path: "edit-post/:id",
+    component: EditPostComponent, data: { animation: 'EditPostPage'}
   },
   {
     path: "blog/:id/post/:idPost",
