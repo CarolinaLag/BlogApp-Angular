@@ -37,4 +37,7 @@ export class BlogService {
     return this.http.delete<Blog>('https://mi-blogs.azurewebsites.net/api/blogs/' + blogId);
   }
 
+  updateBlog(blogId: number, blog:Blog):Observable<Blog> {
+    return this.http.put<Blog>('https://mi-blogs.azurewebsites.net/api/blogs/' + blogId, blog);
+  }
 }

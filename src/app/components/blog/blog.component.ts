@@ -49,4 +49,12 @@ export class BlogComponent implements OnInit {
       this.router.navigate(['/blogs'])
     })
   }
+
+  onEdit(blogId:number) {
+    this.blogService.updateBlog(blogId, this.blog).subscribe(() => {
+      this.blogService.getBlogs();
+      console.log(blogId)
+      this.router.navigate(['/edit-blog/' + this.blog.id])
+    })
+  }
 }

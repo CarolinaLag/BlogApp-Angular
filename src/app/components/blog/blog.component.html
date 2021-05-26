@@ -6,6 +6,7 @@
     <h2>Date:</h2>
     <p class="blogDate" *ngIf="blog?.created">{{blog.created}}</p>
     <button (click)="onDelete(blog.id)" class="deleteBtn">Delete Blog</button>
+    <button (click)="onEdit(blog.id)" class="editBtn">Edit Blog</button>
   </div>
 </div>
 

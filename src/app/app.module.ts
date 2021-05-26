@@ -19,6 +19,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { AddCommentComponent } from './components/add-comment/add-comment.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
     CommentComponent,
     AddCommentComponent,
     NotfoundComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,

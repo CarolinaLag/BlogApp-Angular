@@ -1,0 +1,9 @@
+<div class="blogFormContainer">
+    <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit()">
+        <h2>Edit blog</h2>
+        <label class="blogLabel">Title: </label>
+        <input type="text" name="title" class="blogInput" id="title" [(ngModel)]="title" >
+        
+     <button type="submit" class="blogButton">Update Blog</button>
+    </form>
+    </div>
