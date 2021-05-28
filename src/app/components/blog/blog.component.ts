@@ -4,7 +4,7 @@ import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
 import { BlogService } from 'src/app/services/blog.service';
 import { PostService } from 'src/app/services/post.service';
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-blog',
@@ -20,7 +20,8 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: BlogService,
               private postService: PostService,
               private route: ActivatedRoute,
-              private router: Router
+              private router: Router,
+              private location: Location
               ) { }
 
   ngOnInit() {
@@ -56,5 +57,9 @@ export class BlogComponent implements OnInit {
       console.log(blogId)
       this.router.navigate(['/edit-blog/' + this.blog.id])
     })
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

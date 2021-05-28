@@ -1,5 +1,5 @@
 <!-- Visas efter man har klickat på ett inlägg -->
-<button type="button" class="backBtn" (click)="goBack()">Go back</button>
+<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
 <div class="postContainer">
     <div class="postSection" >
         <h2 >Post Title:</h2>
@@ -13,5 +13,7 @@
     
       <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment>
     
+      <div class="commentContainer">
       <app-comment class="appComment" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>
+      </div>
     </div>
