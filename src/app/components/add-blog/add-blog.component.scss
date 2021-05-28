@@ -1,8 +1,8 @@
 .blogFormContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-.blogForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .blogForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,25 +11,53 @@
     align-items: center;
     background-color: rgb(210, 222, 226);
     border-radius: 5px;
-    width: 30%;
+    width: 70%;
     height: 200px;
     .blogInput {
-        padding: 5px;
-        border-radius: 25px;
-        border: solid black 1px;
-        margin: 5px;
+      padding: 5px;
+      border-radius: 25px;
+      border: solid black 1px;
+      margin: 5px;
     }
     .titleRequired {
-        color:red;
+      color: red;
     }
     .blogButton {
-        padding: 5px;
-        border-radius: 25px;
-        border: solid black 1px;
-        margin: 5px;
-        cursor: pointer;
-        width: 30%;
+      padding: 5px;
+      border-radius: 25px;
+      border: solid black 1px;
+      margin: 5px;
+      cursor: pointer;
+      background: linear-gradient(
+        to bottom,
+        #2dabf9 5%,
+        rgb(150, 198, 236) 100%
+      );
+      &:hover {
+        background: linear-gradient(
+          to bottom,
+          rgb(150, 198, 236) 5%,
+          #2dabf9 100%
+        );
+        background-color: rgb(150, 198, 236);
+      }
     }
-}
+  }
 }
 
+// @media screen and (min-width: 1024px) {
+//   :host {
+//     .blogForm {
+//       width: 30%;
+//     }
+//   }
+
+//   .blogForm {
+//     &:host {
+//       width: 30%;
+//     }
+//   }
+//   :host-context(app-add-blog) .blogForm {
+//     width: 30%;
+//   }
+// }

@@ -47,4 +47,8 @@ export class EditPostComponent implements OnInit {
     })
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
 }

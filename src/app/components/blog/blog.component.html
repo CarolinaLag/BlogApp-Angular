@@ -11,10 +11,13 @@
 </div>
 
 <!-- Visar min add new post form -->
-<app-add-post *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+<div class="addPostContainer">
+<app-add-post class="addPost" *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+</div>
 
 <!-- Skickar ut det jag matar in i min post form -->
+<div class="appPostContainer">
 <app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" [blog]="blog" ></app-post>
-
+</div>
  
   

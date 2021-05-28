@@ -1,25 +1,40 @@
 .blogContainer {
-  width: 50%;
-  float: right;
-  .blogSection {
-    background-color: rgb(150, 198, 236);
+  display: flex;
+  flex-direction: row;
+ flex-wrap:wrap;
+ justify-content: center;
+ align-items: center;
+  .blogItem {
     border-radius: 5px;
-    margin: 15px;
-    padding: 5px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-    &:hover {
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-      transform: scale(0.9);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 15px;
+  padding: 5px;
+  text-align: center;
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
   }
+  &:nth-child(2n) {
+    background-color: rgb(210, 222, 226);
   }
+  &:nth-child(2n + 1) {
+    background-color: rgb(150, 198, 236);
+  }
+}
 }
 
 @media screen and (min-width: 1024px) {
-  .blogContainer {
-   width: 20%;
+  .blogItem {
+    width: 20%;
   }
- }
+  .addBlogContainer {
+    width: 50%;
+    margin: 0 auto;
+    form {
+      width: 30%
+    }
+  }
+}

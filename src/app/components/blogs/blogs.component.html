@@ -1,13 +1,19 @@
- <app-add-blog (addBlog)="addBlog($event)"></app-add-blog> 
-
-<!-- Visar alla mina bloggar på startsidan -->
-<div class="blogContainer" *ngFor="let blog of blogs" [blog]="blog" routerLink="/blog/{{blog.id}}" >
-
-    <div class="blogSection" >
-        <h2>Blog Title:</h2>
-        <h3 class="blogTitle" *ngIf="blog.title"> {{blog.title}}</h3>
-        <h2>Date:</h2>
-        <p class="blogDate" *ngIf="blog.created">{{blog.created}}</p>
-      </div>
+<div class="addBlogContainer">
+  <app-add-blog class="addBlog" (addBlog)="addBlog($event)"></app-add-blog>
 </div>
 
+<!-- Visar alla mina bloggar på startsidan -->
+<div class="blogContainer">
+  <div class="blogItem"
+    *ngFor="let blog of blogs"
+    [blog]="blog"
+    routerLink="/blog/{{ blog.id }}"
+  >
+    <div class="blogSection">
+      <h2>Blog Title:</h2>
+      <h3 class="blogTitle" *ngIf="blog.title">{{ blog.title }}</h3>
+      <h2>Date:</h2>
+      <p class="blogDate" *ngIf="blog.created">{{ blog.created }}</p>
+    </div>
+  </div>
+</div>

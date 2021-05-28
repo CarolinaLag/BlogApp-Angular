@@ -8,7 +8,6 @@
     align-items: center;
     background-color: rgb(210, 222, 226);
     border-radius: 5px;
-    
     .postInput {
         padding: 5px;
         border-radius: 25px;
@@ -22,13 +21,26 @@
         margin: 5px;
         cursor: pointer;
         width: 30%;
+        background: linear-gradient(
+            to bottom,
+            #2dabf9 5%,
+            rgb(150, 198, 236) 100%
+          );
+          &:hover {
+            background: linear-gradient(
+              to bottom,
+              rgb(150, 198, 236) 5%,
+              #2dabf9 100%
+            );
+            background-color: rgb(150, 198, 236);
+          }
     }
 }
 }
 
 @media screen and (min-width: 1024px) {
-    .postForm {
-     width: 30%;
-    }
+    // .postForm {
+    //  width: 30%;
+    // }
    }
   

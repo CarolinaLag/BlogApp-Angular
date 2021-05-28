@@ -1,5 +1,6 @@
 <div class="postFormContainer">
     <form class="postForm" #f="ngForm" (ngSubmit)="onSubmitPost()">
+        <button type="button" class="backBtn" (click)="goBack()">Go back</button>
         <h2>Update post</h2>
         <label for="title" class="postLabel">Title: </label>
         <input type="text" name="title" class="postInput" [(ngModel)]="title"

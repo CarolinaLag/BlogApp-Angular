@@ -46,4 +46,8 @@ export class EditBlogComponent implements OnInit {
     })
   }
 
+  goBack(): void {
+    this.location.back();
+  }
+
 }
