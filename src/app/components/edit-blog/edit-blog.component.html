@@ -1,10 +1,10 @@
+<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
 <div class="blogFormContainer">
-    <button type="button" class="backBtn" (click)="goBack()">Go back</button>
     <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit()">
         <h2>Edit blog</h2>
         <label class="blogLabel">Title: </label>
         <input type="text" name="title" class="blogInput" id="title" [(ngModel)]="title" >
         
-     <button type="submit" class="blogButton">Update Blog</button>
+     <button type="submit" class="blogButton">Update</button>
     </form>
     </div>

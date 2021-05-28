@@ -34,6 +34,7 @@
         padding: 10px;
         margin: 5px;
         border: none;
+        width: 100px;
         &:after {
           content: '';
           position: absolute;
@@ -67,19 +68,3 @@
   }
 }
 
-// @media screen and (min-width: 1024px) {
-//   :host {
-//     .blogForm {
-//       width: 30%;
-//     }
-//   }
-
-//   .blogForm {
-//     &:host {
-//       width: 30%;
-//     }
-//   }
-//   :host-context(app-add-blog) .blogForm {
-//     width: 30%;
-//   }
-// }

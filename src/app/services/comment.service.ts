@@ -17,4 +17,8 @@ export class CommentService {
   addComment(comment: Comment):Observable<Comment> {
     return this.http.post<Comment>('https://mi-blogs.azurewebsites.net/api/comments', comment);
   }
+
+  deleteComment(id:number):Observable<Comment> {
+    return this.http.delete<Comment>('https://mi-blogs.azurewebsites.net/api/comments/' + id);
+  }
 }

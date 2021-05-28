@@ -1,13 +1,13 @@
 <div class="commentFormContainer">
   <form class="commentForm" #f="ngForm" (ngSubmit)="onSubmitComment(f)">
     <h2>Add new comment</h2>
-    <label for="content">Content:</label>
+    <!-- <label for="content">Content:</label> -->
     <textarea
       name="content"
       cols="30"
       rows="5"
       [(ngModel)]="content"
     ></textarea>
-    <button type="submit" class="commentButton">Add comment</button>
+    <button type="submit" class="commentButton"><i class="fas fa-plus"></i></button>
   </form>
 </div>

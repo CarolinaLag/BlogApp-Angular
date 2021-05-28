@@ -27,4 +27,10 @@ export class CommentsComponent implements OnInit {
       console.log(data)
     })
   }
+
+  deleteComment(id:number) {
+    this.commentService.deleteComment(id).subscribe(() => {
+      this.commentService.getComments();
+    });
+    }
 }

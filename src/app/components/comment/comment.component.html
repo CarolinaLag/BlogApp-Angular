@@ -1,7 +1,8 @@
 <div class="commentContainer">
     <div class="commentSection">
-      <h2>Comment:</h2>
+      <div>Comment:</div>
       <p class="commentContent">{{ comment.content }}</p>
+      <button (click)="onDeleteComment(comment.id)" class="deleteBtn"><i class="far fa-trash-alt"></i></button>
     </div>
   </div>
 
