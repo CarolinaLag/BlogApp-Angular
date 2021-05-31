@@ -1,19 +1,30 @@
 <div class="blogFormContainer">
-<form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit(f)">
+  <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit(f)">
     <h2>Add new blog</h2>
     <label class="blogLabel">Title: </label>
-    <input type="text" class="blogInput" id="title" ng-model="blogInput" ng-required="blogInput" required ng-maxlength="30" ng-minlength="2" [(ngModel)]="title" name="title" >
-    <span class="titleRequired" *ngIf="!title">
-        <div *ngIf="title.errors?.required">
-        Title is required
+    <input
+      type="text"
+      class="blogInput"
+      [(ngModel)]="title"
+      name="title"
+      minlength="2" 
+      maxlength="20"
+      title
+      ngModel
+      required 
+      #titleBlog="ngModel"
+    />
+      <div class="titleRequired" *ngIf="titleBlog.invalid && (titleBlog.dirty || titleBlog.touched)">
+        <div *ngIf="titleBlog.errors?.required">Title is required</div>
+        <div *ngIf="titleBlog.errors?.minlength">
+          Title must contain at least 2 letters
         </div>
-        <div *ngIf="title.errors?.minlength" >
-            Title must contain at least 2 letters
+        <div *ngIf="titleBlog.errors?.maxlength" >
+          Title can be max 20 letters
         </div>
-        <div *ngIf="title.errors?.maxlength" >
-            Title can only contain maximum 30 letters
-        </div>
-    </span>
- <button type="submit" class="blogButton"><i class="fas fa-plus"></i></button>
-</form>
+      </div>
+    <button type="submit" class="blogButton" [disabled]="!f.valid">
+      <i class="fas fa-plus"></i>
+    </button>
+  </form>
 </div>

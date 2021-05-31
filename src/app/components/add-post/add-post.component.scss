@@ -1,5 +1,24 @@
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+textarea.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+
+input.ng-valid {
+  border: 1px solid green !important;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid red !important;
+}
+
+.contentRequired, .titleRequired {
+  color:red;
+}
+
 .postFormContainer {
-.postForm {
+  .postForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,16 +28,16 @@
     background-color: rgb(186, 196, 204);
     border-radius: 5px;
     .postInput {
-        padding: 5px;
-        border-radius: 25px;
-        border: solid black 1px;
-        margin: 5px;
+      padding: 5px;
+      border-radius: 25px;
+      border: solid black 1px;
+      margin: 5px;
     }
     .postButton {
       border-radius: 10rem;
       color: #fff;
       font-size: 1rem;
-      transition: all .3s;
+      transition: all 0.3s;
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -28,7 +47,7 @@
       border: none;
       width: 100px;
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -39,14 +58,14 @@
         z-index: -2;
       }
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 0%;
         height: 100%;
         background-color: darken(rgb(150, 198, 236), 15%);
-        transition: all .3s;
+        transition: all 0.3s;
         border-radius: 10rem;
         z-index: -1;
       }
@@ -55,14 +74,13 @@
         &:before {
           width: 100%;
         }
+      }
     }
-    }
-}
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    // .postForm {
-    //  width: 30%;
-    // }
-   }
-  
+  // .postForm {
+  //  width: 30%;
+  // }
+}

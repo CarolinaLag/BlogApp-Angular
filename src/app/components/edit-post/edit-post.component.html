@@ -1,12 +1,56 @@
-<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
+<button type="button" class="backBtn" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left"></i>Go back
+</button>
 <div class="postFormContainer">
-    <form class="postForm" #f="ngForm" (ngSubmit)="onSubmitPost()">
-        <h2>Update post</h2>
-        <label for="title" class="postLabel">Title: </label>
-        <input type="text" name="title" class="postInput" [(ngModel)]="title"
-        >
-        <label for="content">Content:</label>
-        <textarea name="content" cols="30" rows="10" [(ngModel)]="content"></textarea>
-     <button type="submit" class="postButton">Update</button>
-    </form>
+  <form class="postForm" #f="ngForm" (ngSubmit)="onSubmitPost()">
+    <h2>Update post</h2>
+    <label for="title" class="postLabel">Title: </label>
+    <input
+      type="text"
+      name="title"
+      class="postInput"
+      [(ngModel)]="title"
+      minlength="2"
+      maxlength="20"
+      title
+      ngModel
+      required
+      #titlePost="ngModel"
+    />
+    <div
+      class="titleRequired"
+      *ngIf="titlePost.invalid && (titlePost.dirty || titlePost.touched)"
+    >
+      <div *ngIf="titlePost.errors?.required">Title is required</div>
+      <div *ngIf="titlePost.errors?.minlength">
+        Title must contain at least 2 letters
+      </div>
+      <div *ngIf="titlePost.errors?.maxlength">Title can be max 20 letters</div>
     </div>
+    <label for="content">Content:</label>
+    <textarea
+      name="content"
+      cols="30"
+      rows="10"
+      [(ngModel)]="content"
+      minlength="2"
+      maxlength="200"
+      content
+      ngModel
+      required
+      #contentPost="ngModel"
+    ></textarea>
+    <div class="contentRequired" *ngIf="contentPost.invalid && (contentPost.dirty || contentPost.touched)">
+        <div *ngIf="contentPost.errors?.required">Content is required</div>
+        <div *ngIf="contentPost.errors?.minlength">
+          Content must contain at least 2 letters
+        </div>
+        <div *ngIf="contentPost.errors?.maxlength" >
+          Content can be max 200 letters
+        </div>
+      </div>
+    <button type="submit" class="postButton" [disabled]="!f.valid">
+      Update
+    </button>
+  </form>
+</div>

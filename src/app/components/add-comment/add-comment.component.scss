@@ -1,6 +1,17 @@
-.commentFormContainer {
-//   width: 50%;
 
+  textarea.ng-touched.ng-invalid {
+    border: 1px solid red !important;
+    }
+
+    .ng-invalid:not(form) {
+      border: 1px solid red !important;
+    }
+    
+    .contentRequired {
+      color:red;
+    }
+
+.commentFormContainer {
   .commentForm {
     display: flex;
     flex-direction: column;

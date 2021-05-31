@@ -1,8 +1,94 @@
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+
+input.ng-valid {
+  border: 1px solid green !important;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid red !important;
+}
+
+.titleRequired {
+  color: red;
+}
+
 .backBtn {
+  border-radius: 10rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: black;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(210, 222, 226);
     border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(rgb(150, 198, 236), 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
+  .fas {
+    padding: 5px;
+  }
+}
+.blogFormContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .blogForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+    background-color: rgb(210, 222, 226);
+    border-radius: 5px;
+    width: 70%;
+    height: 200px;
+    .blogInput {
+      padding: 5px;
+      border-radius: 25px;
+      border: solid black 1px;
+      margin: 5px;
+    }
+    .titleRequired {
+      color: red;
+    }
+    .blogButton {
+      border-radius: 10rem;
       color: #fff;
       font-size: 1rem;
-      transition: all .3s;
+      transition: all 0.3s;
       position: relative;
       overflow: hidden;
       z-index: 1;
@@ -10,27 +96,27 @@
       padding: 10px;
       margin: 5px;
       border: none;
-      color: black;
+      width: 100px;
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgb(210, 222, 226);
+        background-color: rgb(9, 92, 160);
         border-radius: 10rem;
         z-index: -2;
       }
       &:before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 0%;
         height: 100%;
         background-color: darken(rgb(150, 198, 236), 15%);
-        transition: all .3s;
+        transition: all 0.3s;
         border-radius: 10rem;
         z-index: -1;
       }
@@ -39,79 +125,7 @@
         &:before {
           width: 100%;
         }
-    }
-    .fas {
-      padding: 5px;
-    }
-}
-.blogFormContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;     
-    .blogForm {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-      align-items: center;
-      background-color: rgb(210, 222, 226);
-      border-radius: 5px;
-      width: 70%;
-      height: 200px;
-      .blogInput {
-        padding: 5px;
-        border-radius: 25px;
-        border: solid black 1px;
-        margin: 5px;
-      }
-      .titleRequired {
-        color: red;
-      }
-      .blogButton {
-        border-radius: 10rem;
-          color: #fff;
-          font-size: 1rem;
-          transition: all .3s;
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
-          cursor: pointer;
-          padding: 10px;
-          margin: 5px;
-          border: none;
-          width: 100px;
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgb(9, 92, 160);
-            border-radius: 10rem;
-            z-index: -2;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: darken(rgb(150, 198, 236), 15%);
-            transition: all .3s;
-            border-radius: 10rem;
-            z-index: -1;
-          }
-          &:hover {
-            color: #fff;
-            &:before {
-              width: 100%;
-            }
-          }
       }
     }
   }
-  
-  
+}

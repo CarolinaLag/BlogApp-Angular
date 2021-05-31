@@ -1,3 +1,15 @@
+input.ng-touched.ng-invalid {
+border: 1px solid red !important;
+}
+
+input.ng-valid {
+  border: 1px solid green !important;
+  }
+
+  .ng-invalid:not(form) {
+    border: 1px solid red !important;
+  }
+
 .blogFormContainer {
   display: flex;
   justify-content: center;
@@ -67,4 +79,5 @@
     }
   }
 }
+
 

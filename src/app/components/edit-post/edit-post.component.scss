@@ -1,3 +1,21 @@
+input.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+textarea.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
+
+input.ng-valid {
+  border: 1px solid green !important;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid red !important;
+}
+
+.contentRequired, .titleRequired {
+  color:red;
+}
 .backBtn {
     border-radius: 10rem;
       color: #fff;
