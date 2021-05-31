@@ -5,10 +5,6 @@
     <h3 class="postTitle" *ngIf="post?.title">{{ post.title }}</h3>
     <h2>Post Content:</h2>
     <p class="trim-info" *ngIf="post?.content" tooltip="{{ post.content }}"> {{ post.content }} </p>
+    <p class="nrOfComments">Comments: {{ post?.comments.length || "0" }}</p>
   </div>
 </div>
-
-
- <!-- <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment> -->
-
-<!-- <app-comment class="appComment" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>  -->

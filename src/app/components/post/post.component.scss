@@ -14,20 +14,22 @@
       transform: scale(0.9);
     }
   }
-  .deleteBtn {
-      height: 50px;
+  .trim-info {
+    max-width: 120px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 15px;
+    position: relative;
+  }
+  .nrOfComments {
+    font-weight: bold;
+    color:#095ca0;
   }
 }
 
-.trim-info {
-  max-width: 120px;
-  display: inline-block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  line-height: 15px;
-  position: relative;
-}
+
 
 @media screen and (min-width: 1024px) {
   // .postContainer {

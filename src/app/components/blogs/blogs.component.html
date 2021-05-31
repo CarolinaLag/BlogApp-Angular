@@ -4,16 +4,16 @@
 
 <!-- Visar alla mina bloggar på startsidan -->
 <div class="blogContainer">
-  <div class="blogItem"
+  <div
+    class="blogItem"
     *ngFor="let blog of blogs"
     [blog]="blog"
     routerLink="/blog/{{ blog.id }}"
   >
-    <div class="blogSection">
-      <h2>Blog Title:</h2>
-      <h3 class="blogTitle" *ngIf="blog.title">{{ blog.title }}</h3>
-      <h2>Date:</h2>
-      <p class="blogDate" *ngIf="blog.created">{{ blog.created }}</p>
-    </div>
+    <h2>Blog Title:</h2>
+    <h3 class="blogTitle" *ngIf="blog.title">{{ blog.title }}</h3>
+    <h2>Date:</h2>
+    <p class="blogDate" *ngIf="blog.created">{{ blog.created }}</p>
+    <p class="nrOfPosts">Posts: {{ blog?.posts.length || "0" }}</p>
   </div>
 </div>
