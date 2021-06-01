@@ -24,10 +24,6 @@ export class PostDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    // this.postService.getPosts().subscribe(posts => {
-    //   this.posts = posts;
-    //   console.log(posts)
-    // });
     this.getPost();
   }
 

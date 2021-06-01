@@ -23,7 +23,7 @@ export class CommentsComponent implements OnInit {
   getComments(): void {
     // const postId = this.post.id;
     this.commentService.getComments().subscribe((data) => {
-      // this.post.comments = data.filter((comment) => comment.id == postId);
+      //this.post.comments = data.filter((comment) => comment.id == postId);
       console.log(data)
     })
   }

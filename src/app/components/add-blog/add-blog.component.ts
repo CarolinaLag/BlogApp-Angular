@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { Blog } from 'src/app/models/Blog';
-import { Post } from 'src/app/models/Post';
 
 @Component({
   selector: 'app-add-blog',

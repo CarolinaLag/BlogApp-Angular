@@ -2,7 +2,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
-import { Comment } from 'src/app/models/Comment';
 import { Post } from 'src/app/models/Post';
 import { CommentService } from 'src/app/services/comment.service';
 import { PostService } from 'src/app/services/post.service';
@@ -41,19 +40,4 @@ export class PostComponent implements OnInit {
       console.log(post);
     })
   }
-
-  // onDeletePost(postId:number) {
-  //   this.postService.deletePost(postId).subscribe(() => {
-  //     this.postService.getPosts();
-  //     console.log(postId)
-  //     location.reload();
-  //   })
-  // }
-
-  // addComment(c:Comment) {
-  //   this.commentService.addComment(c).subscribe(comment => {
-  //     this.post.comments.push(comment);
-  //     console.log(comment)
-  //   })
-  // }
 }

@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Blog } from 'src/app/models/Blog';
-
 import { BlogComponent } from './blog.component';
+import { BlogService } from 'src/app/services/blog.service';
+import { PostService } from 'src/app/services/post.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
 
 describe('BlogComponent', () => {
   let component: TestHostComponent;
@@ -10,9 +14,13 @@ describe('BlogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BlogComponent, TestHostComponent ]
-    })
-    .compileComponents();
+      declarations: [
+        BlogComponent,
+        TestHostComponent
+      ],
+      imports:[HttpClientModule, ActivatedRoute, Router, NgModel ],
+      providers: [{ provide: BlogService}, {provide: PostService}]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -11,8 +11,6 @@ import { Location } from '@angular/common';
   styleUrls: ['./edit-blog.component.scss']
 })
 export class EditBlogComponent implements OnInit {
-  // @Output() addBlog: EventEmitter<Blog> = new EventEmitter();
-  
   blog: Blog;
   blogs: Blog[] = [];
 
