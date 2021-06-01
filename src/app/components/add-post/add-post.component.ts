@@ -22,7 +22,7 @@ export class AddPostComponent implements OnInit {
   }
 
   onSubmitPost(f: NgForm) {
-    if(this.title == '' || this.content == '') {
+    if(this.title.length > 20) {
     } else {
     this.blogId = this.blog;
     this.title = this.title;

@@ -8,7 +8,7 @@
       [(ngModel)]="title"
       name="title"
       minlength="2" 
-      maxlength="20"
+      maxlength="21"
       title
       ngModel
       required 
@@ -19,9 +19,9 @@
         <div *ngIf="titleBlog.errors?.minlength">
           Title must contain at least 2 letters
         </div>
-        <div *ngIf="titleBlog.errors?.maxlength" >
-          Title can be max 20 letters
-        </div>
+      </div>
+      <div class="titleRequired" *ngIf="titleBlog.value?.length > 20 " >
+        Title can be max 20 letters
       </div>
     <button type="submit" class="blogButton" [disabled]="!f.valid">
       <i class="fas fa-plus"></i>

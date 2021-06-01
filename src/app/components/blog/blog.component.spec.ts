@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Blog } from 'src/app/models/Blog';
-import { Post } from 'src/app/models/Post';
 
 import { BlogComponent } from './blog.component';
 
@@ -34,7 +33,8 @@ describe('BlogComponent', () => {
 });
 
   @Component({
-    template: `<app-blog [blog]="blogToSendToChild"></app-blog>`,
+    template: `<app-blog 
+    [blog]="blogToSendToChild"></app-blog>`,
   })
   class TestHostComponent {
     blogToSendToChild: Blog = {userId: 55, id: 806, title: 'Vacation', created: '2021-05-27', posts: [] };

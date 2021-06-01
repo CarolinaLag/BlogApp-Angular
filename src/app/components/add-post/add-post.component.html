@@ -7,7 +7,7 @@
     class="postInput" 
     [(ngModel)]="title"  
     minlength="2" 
-    maxlength="20"
+    maxlength="21"
     title
     ngModel
     required 
@@ -18,9 +18,9 @@
         <div *ngIf="titlePost.errors?.minlength">
           Title must contain at least 2 letters
         </div>
-        <div *ngIf="titlePost.errors?.maxlength" >
-          Title can be max 20 letters
-        </div>
+      </div>
+      <div class="titleRequired" *ngIf="titlePost.value?.length > 20 " >
+        Title can be max 20 letters
       </div>
     <label for="content">Content:</label>
     <textarea name="content" cols="30" rows="10" 
