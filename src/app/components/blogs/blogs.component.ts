@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
@@ -11,7 +11,7 @@ import { Post } from 'src/app/models/Post';
 export class BlogsComponent implements OnInit {
   blogs: Blog[] = [];
 
-  @Input() blog: Blog;
+  // @Input() blog: Blog;
 
   userId: number;
   title: string;
