@@ -11,8 +11,6 @@ import { Post } from 'src/app/models/Post';
 export class BlogsComponent implements OnInit {
   blogs: Blog[] = [];
 
-  // @Input() blog: Blog;
-
   userId: number;
   title: string;
   created: string;
@@ -42,7 +40,6 @@ export class BlogsComponent implements OnInit {
   }
 
   updateBlog(blogId: number, blog: Blog) {
-
     this.blogService.updateBlog(blogId, blog).subscribe(() => {
       this.blogService.getBlogs();
     });

@@ -7,22 +7,25 @@
       class="blogInput"
       [(ngModel)]="title"
       name="title"
-      minlength="2" 
+      minlength="2"
       maxlength="21"
       title
       ngModel
-      required 
+      required
       #titleBlog="ngModel"
     />
-      <div class="titleRequired" *ngIf="titleBlog.invalid && (titleBlog.dirty || titleBlog.touched)">
-        <div *ngIf="titleBlog.errors?.required">Title is required</div>
-        <div *ngIf="titleBlog.errors?.minlength">
-          Title must contain at least 2 letters
-        </div>
+    <div
+      class="titleRequired"
+      *ngIf="titleBlog.invalid && (titleBlog.dirty || titleBlog.touched)"
+    >
+      <div *ngIf="titleBlog.errors?.required">Title is required</div>
+      <div *ngIf="titleBlog.errors?.minlength">
+        Title must contain at least 2 letters
       </div>
-      <div class="titleRequired" *ngIf="titleBlog.value?.length > 20 " >
-        Title can be max 20 letters
-      </div>
+    </div>
+    <div class="titleRequired" *ngIf="titleBlog.value?.length > 20">
+      Title can be max 20 letters
+    </div>
     <button type="submit" class="blogButton" [disabled]="!f.valid">
       <i class="fas fa-plus"></i>
     </button>

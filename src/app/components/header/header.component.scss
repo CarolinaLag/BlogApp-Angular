@@ -1,31 +1,31 @@
 nav {
-    a {
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition: border-bottom 0.2s;
-        color: black;
-        font-weight: bold;
-        &:hover {
-            border-bottom-color: inherit;
-        }
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s;
+    color: black;
+    font-weight: bold;
+    &:hover {
+      border-bottom-color: inherit;
     }
-    .active {
-       border: 1px solid black;
-       padding: 10px;
-       border-radius: 5px;
-       &:hover {
-        background-color: rgb(150, 198, 236);
-        border-radius: 5px;
+  }
+  .active {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgb(150, 198, 236);
+      border-radius: 5px;
     }
+  }
+  .menuList {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .menuListItem {
+      list-style: none;
+      padding: 10px;
+      cursor: pointer;
     }
-    .menuList {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        .menuListItem {
-            list-style: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-    }
+  }
 }

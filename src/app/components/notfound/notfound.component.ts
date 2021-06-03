@@ -4,17 +4,14 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-notfound',
   templateUrl: './notfound.component.html',
-  styleUrls: ['./notfound.component.scss']
+  styleUrls: ['./notfound.component.scss'],
 })
 export class NotfoundComponent implements OnInit {
+  constructor(private location: Location) {}
 
-  constructor(private location: Location) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   goBack(): void {
     this.location.back();
   }
-
 }

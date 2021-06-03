@@ -1,27 +1,37 @@
-<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
+<button type="button" class="backBtn" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left"></i>Go back
+</button>
 <div class="blogFormContainer">
-    <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit()">
-        <h2>Edit blog</h2>
-        <label class="blogLabel">Title: </label>
-        <input type="text" name="title" class="blogInput" id="title" 
-        [(ngModel)]="title" 
-        name="title"
-        minlength="2" 
-        maxlength="20"
-        title
-        ngModel
-        required 
-        #titleBlog="ngModel" >
-        <div class="titleRequired" *ngIf="titleBlog.invalid && (titleBlog.dirty || titleBlog.touched)">
-            <div *ngIf="titleBlog.errors?.required">Title is required</div>
-            <div *ngIf="titleBlog.errors?.minlength">
-              Title must contain at least 2 letters
-            </div>
-            <div *ngIf="titleBlog.errors?.maxlength" >
-              Title can be max 20 letters
-            </div>
-          </div>
-        
-     <button type="submit" class="blogButton" [disabled]="!f.valid">Update</button>
-    </form>
+  <form class="blogForm" #f="ngForm" name="blogForm" (ngSubmit)="onSubmit()">
+    <h2>Edit blog</h2>
+    <label class="blogLabel">Title: </label>
+    <input
+      type="text"
+      name="title"
+      class="blogInput"
+      id="title"
+      [(ngModel)]="title"
+      name="title"
+      minlength="2"
+      maxlength="20"
+      title
+      ngModel
+      required
+      #titleBlog="ngModel"
+    />
+    <div
+      class="titleRequired"
+      *ngIf="titleBlog.invalid && (titleBlog.dirty || titleBlog.touched)"
+    >
+      <div *ngIf="titleBlog.errors?.required">Title is required</div>
+      <div *ngIf="titleBlog.errors?.minlength">
+        Title must contain at least 2 letters
+      </div>
+      <div *ngIf="titleBlog.errors?.maxlength">Title can be max 20 letters</div>
     </div>
+
+    <button type="submit" class="blogButton" [disabled]="!f.valid">
+      Update
+    </button>
+  </form>
+</div>

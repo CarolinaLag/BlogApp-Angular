@@ -1,120 +1,119 @@
 .backBtn {
   border-radius: 10rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: black;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(210, 222, 226);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(rgb(150, 198, 236), 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
     color: #fff;
-    font-size: 1rem;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    color: black;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgb(210, 222, 226);
-      border-radius: 10rem;
-      z-index: -2;
-    }
     &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: darken(rgb(150, 198, 236), 15%);
-      transition: all .3s;
-      border-radius: 10rem;
-      z-index: -1;
+      width: 100%;
     }
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
   }
   .fas {
     padding: 5px;
   }
 }
 .postContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-.postSection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .postSection {
     background-color: rgb(186, 196, 204);
     width: 70%;
     border-radius: 5px;
     margin: 5px;
     text-align: center;
     padding: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    .deleteBtn, .editBtn {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    .deleteBtn,
+    .editBtn {
+      border-radius: 10rem;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      cursor: pointer;
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      width: 100px;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(9, 92, 160);
         border-radius: 10rem;
+        z-index: -2;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken(rgb(150, 198, 236), 15%);
+        transition: all 0.3s;
+        border-radius: 10rem;
+        z-index: -1;
+      }
+      &:hover {
         color: #fff;
-        font-size: 1rem;
-        transition: all .3s;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        cursor: pointer;
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        width: 100px;
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgb(9, 92, 160);
-          border-radius: 10rem;
-          z-index: -2;
-        }
         &:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 100%;
-          background-color: darken(rgb(150, 198, 236), 15%);
-          transition: all .3s;
-          border-radius: 10rem;
-          z-index: -1;
-        }
-        &:hover {
-          color: #fff;
-          &:before {
-            width: 100%;
-          }
+          width: 100%;
         }
       }
     }
-   }
+  }
+}
 
-   .commentContainer {
-    display: flex;
-    flex-direction: row;
-   flex-wrap:wrap;
-   justify-content: center;
-   align-items: center;
-   }
-
+.commentContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (min-width: 1024px) {
-      .postSection {
-        width: 40%;
-      }
-     
-    }
+  .postSection {
+    width: 40%;
+  }
+}

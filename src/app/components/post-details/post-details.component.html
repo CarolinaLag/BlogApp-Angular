@@ -1,19 +1,34 @@
 <!-- Visas efter man har klickat på ett inlägg -->
 
-<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
+<button type="button" class="backBtn" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left"></i>Go back
+</button>
 <div class="postContainer">
-    <div class="postSection" >
-        <h2 >Post Title:</h2>
-        <h3 class="postTitle" *ngIf="post?.title"> {{post.title}}</h3>
-        <h2>Post Content:</h2>
-        <p class="postContent" *ngIf="post?.content">{{post.content}}</p>
-        <button (click)="onDeletePost(post.id)" class="deleteBtn"><i class="far fa-trash-alt"></i></button>
-        <button (click)="onEditPost(post.id)" class="editBtn"><i class="far fa-edit"></i></button>
-      </div>
-    
-      <app-add-comment *ngIf="post?.id" (addComment)="addComment($event)" [postId]="post.id"></app-add-comment>
-    
-      <div class="commentContainer">
-      <app-comment class="appComment" (deleteComment)="deleteComment($event)" *ngFor="let comment of post?.comments" [comment]="comment" ></app-comment>
-      </div>
-    </div>
+  <div class="postSection">
+    <h2>Post Title:</h2>
+    <h3 class="postTitle" *ngIf="post?.title">{{ post.title }}</h3>
+    <h2>Post Content:</h2>
+    <p class="postContent" *ngIf="post?.content">{{ post.content }}</p>
+    <button (click)="onDeletePost(post.id)" class="deleteBtn">
+      <i class="far fa-trash-alt"></i>
+    </button>
+    <button (click)="onEditPost(post.id)" class="editBtn">
+      <i class="far fa-edit"></i>
+    </button>
+  </div>
+
+  <app-add-comment
+    *ngIf="post?.id"
+    (addComment)="addComment($event)"
+    [postId]="post.id"
+  ></app-add-comment>
+
+  <div class="commentContainer">
+    <app-comment
+      class="appComment"
+      (deleteComment)="deleteComment($event)"
+      *ngFor="let comment of post?.comments"
+      [comment]="comment"
+    ></app-comment>
+  </div>
+</div>

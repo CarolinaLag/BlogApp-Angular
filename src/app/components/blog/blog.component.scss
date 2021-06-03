@@ -1,44 +1,44 @@
 .backBtn {
   border-radius: 10rem;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  color: black;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(210, 222, 226);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(rgb(150, 198, 236), 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
     color: #fff;
-    font-size: 1rem;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    cursor: pointer;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    color: black;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgb(210, 222, 226);
-      border-radius: 10rem;
-      z-index: -2;
-    }
     &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: darken(rgb(150, 198, 236), 15%);
-      transition: all .3s;
-      border-radius: 10rem;
-      z-index: -1;
+      width: 100%;
     }
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
   }
   .fas {
     padding: 5px;
@@ -48,67 +48,68 @@
   display: flex;
   justify-content: center;
   align-items: center;
-    .blogSection {
-      width: 48%;
-      background-color: rgb(150, 198, 236);
-      border-radius: 5px;
+  .blogSection {
+    width: 48%;
+    background-color: rgb(150, 198, 236);
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 10px;
+    .deleteBtn,
+    .editBtn {
+      border-radius: 10rem;
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      cursor: pointer;
       padding: 10px;
-      text-align: center;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-      transition: 0.3s;
-      margin: 10px;
-      .deleteBtn, .editBtn {
+      margin: 5px;
+      border: none;
+      width: 100px;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(9, 92, 160);
         border-radius: 10rem;
-        color: #fff;
-        font-size: 1rem;
-        transition: all .3s;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-        cursor: pointer;
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        width: 100px;
-        &:after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgb(9, 92, 160);
-          border-radius: 10rem;
-          z-index: -2;
-        }
-        &:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0%;
-          height: 100%;
-          background-color: darken(rgb(150, 198, 236), 15%);
-          transition: all .3s;
-          border-radius: 10rem;
-          z-index: -1;
-        }
-        &:hover {
-          color: #fff;
-          &:before {
-            width: 100%;
-          }
+        z-index: -2;
       }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken(rgb(150, 198, 236), 15%);
+        transition: all 0.3s;
+        border-radius: 10rem;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &:before {
+          width: 100%;
+        }
       }
     }
   }
+}
 
 .appPostContainer {
   display: flex;
   flex-direction: row;
- flex-wrap:wrap;
- justify-content: center;
- align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .addPostContainer {
@@ -118,19 +119,18 @@
 }
 
 .addPost {
-width: 80%;
+  width: 80%;
 }
 
 .appPost {
   width: 50%;
 }
-  
-  @media screen and (min-width: 1024px) {
-    .appPost {
-      width: 40%;
-    }
-    .addPost {
-      width: 50%;
-      }
-   }
-  
+
+@media screen and (min-width: 1024px) {
+  .appPost {
+    width: 40%;
+  }
+  .addPost {
+    width: 50%;
+  }
+}

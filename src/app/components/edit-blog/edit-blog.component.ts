@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-edit-blog',
   templateUrl: './edit-blog.component.html',
-  styleUrls: ['./edit-blog.component.scss']
+  styleUrls: ['./edit-blog.component.scss'],
 })
 export class EditBlogComponent implements OnInit {
   blog: Blog;
@@ -20,32 +20,37 @@ export class EditBlogComponent implements OnInit {
 
   id: number;
 
-  constructor(private blogService: BlogService,
-    private route: ActivatedRoute, private location: Location) { }
+  constructor(
+    private blogService: BlogService,
+    private route: ActivatedRoute,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
-   this.getBlog();
+    this.getBlog();
   }
 
   getBlog(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.blogService.getBlog(id).subscribe((blog) => {
-      this.blog = blog;
-      this.title = this.blog.title;
-    })
+    this.route.paramMap.subscribe((params) => {
+      let id = +params.get('id');
+      this.blogService.getBlog(id).subscribe((blog) => {
+        this.blog = blog;
+        this.title = this.blog.title;
+        console.log(blog);
+      });
+    });
   }
 
   onSubmit() {
     this.blog.title = this.title;
-    
-    this.blogService.updateBlog(this.blog.id, this.blog).subscribe(data => {
-      this.location.back();
+
+    this.blogService.updateBlog(this.blog.id, this.blog).subscribe((data) => {
       console.log(data);
-    })
+      this.location.back();
+    });
   }
 
   goBack(): void {
     this.location.back();
   }
-
 }

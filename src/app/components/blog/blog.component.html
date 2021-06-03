@@ -1,24 +1,38 @@
 <!-- Visas på nästa sida efter man klickat på en blog -->
-<button type="button" class="backBtn" (click)="goBack()"><i class="fas fa-chevron-circle-left"></i>Go back</button>
+<button type="button" class="backBtn" (click)="goBack()">
+  <i class="fas fa-chevron-circle-left"></i>Go back
+</button>
 <div class="blogContainer">
-<div class="blogSection" >
-    <h2 >Blog Title:</h2>
-    <h3 class="blogTitle" *ngIf="blog?.title"> {{blog.title}}</h3>
+  <div class="blogSection">
+    <h2>Blog Title:</h2>
+    <h3 class="blogTitle" *ngIf="blog?.title">{{ blog.title }}</h3>
     <h2>Date:</h2>
-    <p class="blogDate" *ngIf="blog?.created">{{blog.created}}</p>
-    <button (click)="onDelete(blog.id)" class="deleteBtn"><i class="far fa-trash-alt"></i></button>
-    <button (click)="onEdit(blog.id)" class="editBtn"><i class="far fa-edit"></i></button>
+    <p class="blogDate" *ngIf="blog?.created">{{ blog.created }}</p>
+    <button (click)="onDelete(blog.id)" class="deleteBtn">
+      <i class="far fa-trash-alt"></i>
+    </button>
+    <button (click)="onEdit(blog.id)" class="editBtn">
+      <i class="far fa-edit"></i>
+    </button>
   </div>
 </div>
 
 <!-- Visar min add new post form -->
 <div class="addPostContainer">
-<app-add-post class="addPost" *ngIf="blog?.id" (addPost)="addPost($event)" [blog]="blog.id"></app-add-post>
+  <app-add-post
+    class="addPost"
+    *ngIf="blog?.id"
+    (addPost)="addPost($event)"
+    [blog]="blog.id"
+  ></app-add-post>
 </div>
 
 <!-- Skickar ut det jag matar in i min post form -->
 <div class="appPostContainer">
-<app-post class="appPost" *ngFor="let post of blog?.posts; let i = index" [post]="post" [blog]="blog" ></app-post>
+  <app-post
+    class="appPost"
+    *ngFor="let post of blog?.posts; let i = index"
+    [post]="post"
+    [blog]="blog"
+  ></app-post>
 </div>
- 
-  

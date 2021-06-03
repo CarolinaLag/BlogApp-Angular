@@ -5,23 +5,31 @@
       name="content"
       cols="30"
       rows="5"
-      [(ngModel)]="content" 
-      minlength="2" 
+      [(ngModel)]="content"
+      minlength="2"
       maxlength="200"
       content
-      ngModel 
+      ngModel
       required
       #contentComment="ngModel"
     ></textarea>
-    <div class="contentRequired" *ngIf="contentComment.invalid && (contentComment.dirty || contentComment.touched)">
+    <div
+      class="contentRequired"
+      *ngIf="
+        contentComment.invalid &&
+        (contentComment.dirty || contentComment.touched)
+      "
+    >
       <div *ngIf="contentComment.errors?.required">Content is required</div>
       <div *ngIf="contentComment.errors?.minlength">
         Content must contain at least 2 letters
       </div>
-      <div *ngIf="contentComment.errors?.maxlength" >
+      <div *ngIf="contentComment.errors?.maxlength">
         Content can be max 200 letters
       </div>
     </div>
-    <button type="submit" class="commentButton" [disabled]="!f.valid"><i class="fas fa-plus"></i></button>
+    <button type="submit" class="commentButton" [disabled]="!f.valid">
+      <i class="fas fa-plus"></i>
+    </button>
   </form>
 </div>

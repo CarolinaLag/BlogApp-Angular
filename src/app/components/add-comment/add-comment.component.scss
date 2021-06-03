@@ -1,15 +1,14 @@
+textarea.ng-touched.ng-invalid {
+  border: 1px solid red !important;
+}
 
-  textarea.ng-touched.ng-invalid {
-    border: 1px solid red !important;
-    }
+.ng-invalid:not(form) {
+  border: 1px solid red !important;
+}
 
-    .ng-invalid:not(form) {
-      border: 1px solid red !important;
-    }
-    
-    .contentRequired {
-      color:red;
-    }
+.contentRequired {
+  color: red;
+}
 
 .commentFormContainer {
   .commentForm {
@@ -26,7 +25,7 @@
     border-radius: 10rem;
     color: #fff;
     font-size: 1rem;
-    transition: all .3s;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -37,7 +36,7 @@
     color: black;
     width: 100px;
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
@@ -48,14 +47,14 @@
       z-index: -2;
     }
     &:before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 0%;
       height: 100%;
       background-color: darken(rgb(150, 198, 236), 15%);
-      transition: all .3s;
+      transition: all 0.3s;
       border-radius: 10rem;
       z-index: -1;
     }
@@ -67,4 +66,3 @@
     }
   }
 }
-

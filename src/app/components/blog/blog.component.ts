@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Blog } from 'src/app/models/Blog';
 import { Post } from 'src/app/models/Post';
@@ -9,55 +9,58 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['./blog.component.scss'],
 })
-export class BlogComponent implements OnInit {  
+export class BlogComponent implements OnInit {
   @Input() blog: Blog;
   blogs: Blog[] = [];
 
-  id: number; 
+  id: number;
 
-  constructor(private blogService: BlogService,
-              private postService: PostService,
-              private route: ActivatedRoute,
-              private router: Router,
-              private location: Location
-              ) { }
+  constructor(
+    private blogService: BlogService,
+    private postService: PostService,
+    private route: ActivatedRoute,
+    private router: Router,
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.getBlog();
   }
 
   getBlog(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.blogService.getBlog(id).subscribe((blog) => {
-      this.blog = blog;
-      console.log(blog);
-    })
+    this.route.paramMap.subscribe((params) => {
+      let id = +params.get('id');
+      this.blogService.getBlog(id).subscribe((blog) => {
+        this.blog = blog;
+        console.log(blog);
+      });
+    });
   }
 
-  addPost(p:Post) {
-    this.postService.addPost(p).subscribe(post => {
+  addPost(p: Post) {
+    this.postService.addPost(p).subscribe((post) => {
       this.blog.posts.push(post);
-      console.log(post)
-    })
+      console.log(post);
+    });
   }
 
-  onDelete(blogId:number) {
+  onDelete(blogId: number) {
     this.blogService.deleteBlog(blogId).subscribe(() => {
-      this.router.navigate(['/blogs'])
-    })
+      this.router.navigate(['/blogs']);
+    });
   }
 
-  onEdit(blogId:number) {
+  onEdit(blogId: number) {
     this.blogService.updateBlog(blogId, this.blog).subscribe(() => {
       this.blogService.getBlogs();
-      console.log(blogId)
-      this.router.navigate(['/edit-blog/' + this.blog.id])
-    })
+      console.log(blogId);
+      this.router.navigate(['/edit-blog/' + this.blog.id]);
+    });
   }
 
   goBack(): void {
-    this.router.navigate(['/blogs'])
+    this.router.navigate(['/blogs']);
   }
 }

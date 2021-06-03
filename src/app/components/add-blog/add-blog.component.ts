@@ -5,7 +5,7 @@ import { Blog } from 'src/app/models/Blog';
 @Component({
   selector: 'app-add-blog',
   templateUrl: './add-blog.component.html',
-  styleUrls: ['./add-blog.component.scss']
+  styleUrls: ['./add-blog.component.scss'],
 })
 export class AddBlogComponent implements OnInit {
   @Output() addBlog: EventEmitter<Blog> = new EventEmitter();
@@ -14,22 +14,21 @@ export class AddBlogComponent implements OnInit {
   title: string = '';
   created: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(f:NgForm) {
-    if(this.title.length > 20) {
+  onSubmit(f: NgForm) {
+    if (this.title.length > 20) {
     } else {
-    this.title = this.title;
-    this.created = this.created;
+      this.title = this.title;
+      this.created = this.created;
 
-    let blog = new Blog(this.userId, this.title, this.created);
-    
-    this.addBlog.emit(blog);
-    f.resetForm();
-    this.title = "";
-   }
+      let blog = new Blog(this.userId, this.title, this.created);
+
+      this.addBlog.emit(blog);
+      f.resetForm();
+      this.title = '';
+    }
   }
 }

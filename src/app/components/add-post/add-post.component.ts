@@ -33,8 +33,6 @@ export class AddPostComponent implements OnInit {
     
     this.addPost.emit(post);
     f.resetForm();
-    this.title = "";
-    this.content = "";
    }
   }
 }
