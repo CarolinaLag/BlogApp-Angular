@@ -21,7 +21,6 @@ export class AddBlogComponent implements OnInit {
 
   onSubmit(f:NgForm) {
     if(this.title.length > 20) {
-      alert('max 20!')
     } else {
     this.title = this.title;
     this.created = this.created;

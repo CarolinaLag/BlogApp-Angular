@@ -45,8 +45,6 @@ export class BlogComponent implements OnInit {
 
   onDelete(blogId:number) {
     this.blogService.deleteBlog(blogId).subscribe(() => {
-      this.blogService.getBlogs();
-      console.log(blogId)
       this.router.navigate(['/blogs'])
     })
   }
@@ -60,6 +58,6 @@ export class BlogComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/blogs'])
   }
 }

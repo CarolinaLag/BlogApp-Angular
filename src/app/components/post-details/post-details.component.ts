@@ -43,14 +43,12 @@ export class PostDetailsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+  this.location.back();
   }
 
   onDeletePost(postId:number) {
     this.postService.deletePost(postId).subscribe(() => {
-      this.postService.getPosts();
-      console.log(postId)
-      this.location.back();
+      this.router.navigate(['/blog',this.post.blogId])
     })
   }
 
@@ -59,6 +57,12 @@ export class PostDetailsComponent implements OnInit {
       this.postService.getPosts();
       console.log(postId)
       this.router.navigate(['/edit-post/' + this.post.id])
+    })
+  }
+
+  deleteComment(id:number) {
+    this.commentService.deleteComment(id).subscribe(data => {
+      this.getPost();
     })
   }
 }

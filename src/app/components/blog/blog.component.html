@@ -18,7 +18,7 @@
 
 <!-- Skickar ut det jag matar in i min post form -->
 <div class="appPostContainer">
-<app-post class="appPost" *ngFor="let post of blog?.posts" [post]="post" [blog]="blog" ></app-post>
+<app-post class="appPost" *ngFor="let post of blog?.posts; let i = index" [post]="post" [blog]="blog" ></app-post>
 </div>
  
   

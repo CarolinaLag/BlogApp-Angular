@@ -17,7 +17,7 @@ export class PostComponent implements OnInit {
   posts: Post[] = [];
 
   @Input() blog: Blog;
-  blogs: Blog[] = [];
+  //blogs: Blog[] = [];
 
   id: number;
 
@@ -28,16 +28,19 @@ export class PostComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
-    this.postService.getPosts().subscribe(posts => {
-      this.posts = posts;
-    });
+    //this.postService.getPosts().subscribe(posts => {
+      //this.posts = posts;
+    //});
+    //this.getPost();
   }
 
-  getPost(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.postService.getPost(id).subscribe((post) => {
-      this.post = post;
-      console.log(post);
-    })
-  }
+  // getPost(): void {
+  //  this.route.paramMap.subscribe(params => {
+  //   let id = +params.get('id');
+  //   this.postService.getPost(id).subscribe((post) => {
+  //     this.post = post;
+  //     console.log(post);
+  //   })
+  //  })
+  // }
 }
