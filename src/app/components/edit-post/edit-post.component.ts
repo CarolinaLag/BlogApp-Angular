@@ -47,7 +47,6 @@ export class EditPostComponent implements OnInit {
     this.post.content = this.content;
 
     this.postService.updatePost(this.post.id, this.post).subscribe((data) => {
-      console.log(data);
       this.location.back();
     });
   }

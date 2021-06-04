@@ -45,7 +45,6 @@ export class EditBlogComponent implements OnInit {
     this.blog.title = this.title;
 
     this.blogService.updateBlog(this.blog.id, this.blog).subscribe((data) => {
-      console.log(data);
       this.location.back();
     });
   }

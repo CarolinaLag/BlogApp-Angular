@@ -19,9 +19,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {}
 
   getPosts(): void {
-    const blogId = this.blog.id;
     this.postService.getPosts().subscribe((data) => {
-      this.blog.posts = data.filter((post) => post.id == blogId);
     });
   }
 

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Comment } from 'src/app/models/Comment';
-import { CommentService } from 'src/app/services/comment.service';
 
 @Component({
   selector: 'app-comment',
@@ -12,7 +11,7 @@ export class CommentComponent implements OnInit {
 
   @Output() deleteComment = new EventEmitter();
 
-  constructor(private commentService: CommentService) {}
+  constructor() {}
 
   ngOnInit() {}
 
