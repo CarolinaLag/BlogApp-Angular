@@ -34,7 +34,6 @@ export class PostDetailsComponent implements OnInit {
       let id = +params.get('idPost');
       this.postService.getPost(id).subscribe((post) => {
         this.post = post;
-        console.log(post);
       });
     });
   }
@@ -42,7 +41,6 @@ export class PostDetailsComponent implements OnInit {
   addComment(c: Comment) {
     this.commentService.addComment(c).subscribe((comment) => {
       this.post.comments.push(comment);
-      console.log(comment);
     });
   }
 
@@ -59,7 +57,6 @@ export class PostDetailsComponent implements OnInit {
   onEditPost(postId: number) {
     this.postService.updatePost(postId, this.post).subscribe(() => {
       this.postService.getPosts();
-      console.log(postId);
       this.router.navigate(['/edit-post/' + this.post.id]);
     });
   }

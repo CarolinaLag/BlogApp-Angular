@@ -37,7 +37,6 @@ export class EditPostComponent implements OnInit {
         this.post = post;
         this.title = this.post.title;
         this.content = this.post.title;
-        console.log(post);
       });
     });
   }

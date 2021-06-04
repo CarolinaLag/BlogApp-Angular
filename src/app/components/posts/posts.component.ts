@@ -27,13 +27,11 @@ export class PostsComponent implements OnInit {
     this.postService.deletePost(postId).subscribe(() => {
       this.postService.getPosts();
     });
-    console.log(postId);
   }
 
   updatePost(postId: number, post: Post) {
     this.postService.updatePost(postId, post).subscribe(() => {
       this.postService.getPosts();
     });
-    console.log(postId);
   }
 }

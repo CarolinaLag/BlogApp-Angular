@@ -42,7 +42,6 @@ export class BlogComponent implements OnInit {
   addPost(p: Post) {
     this.postService.addPost(p).subscribe((post) => {
       this.blog.posts.push(post);
-      console.log(post);
     });
   }
 
@@ -55,7 +54,6 @@ export class BlogComponent implements OnInit {
   onEdit(blogId: number) {
     this.blogService.updateBlog(blogId, this.blog).subscribe(() => {
       this.blogService.getBlogs();
-      console.log(blogId);
       this.router.navigate(['/edit-blog/' + this.blog.id]);
     });
   }

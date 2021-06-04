@@ -27,7 +27,6 @@ export class AddPostComponent implements OnInit {
     this.blogId = this.blog;
     this.title = this.title;
     this.content = this.content;
-    console.log(this.blogId)
 
     let post = new Post(this.blogId, this.title, this.content);
     

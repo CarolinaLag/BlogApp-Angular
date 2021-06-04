@@ -28,7 +28,6 @@ export class BlogsComponent implements OnInit {
   addBlog(blog: Blog) {
     this.blogService.addBlog(blog).subscribe((blog) => {
       this.blogs.push(blog);
-      console.log(blog);
     });
   }
 

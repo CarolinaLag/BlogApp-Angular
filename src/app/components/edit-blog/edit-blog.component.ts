@@ -36,7 +36,6 @@ export class EditBlogComponent implements OnInit {
       this.blogService.getBlog(id).subscribe((blog) => {
         this.blog = blog;
         this.title = this.blog.title;
-        console.log(blog);
       });
     });
   }
