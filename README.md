@@ -9,6 +9,9 @@ A blog app built with CRUD operation.
 - Some simple testing
 
 ***
+## Live 
+=> https://blog-angular.netlify.app/
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
