@@ -1,5 +1,15 @@
 # BlogAngular
 
+A blog app built with CRUD operation. 
+
+## Some functionalities:
+- Create blogs, posts and comments
+- Edit the blogs and posts
+- Delete the blogs, posts and comments
+- Some simple testing
+
+***
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.10.
 
 ## Development server
